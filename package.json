@@ -1,0 +1,14 @@
+{
+  "name": "animations",
+  "version": "1.0.0",
+  "description": "Challenge Halloween CodePen ",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Lucille Malozon",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
