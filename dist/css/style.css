@@ -7,17 +7,47 @@ body {
   background-color: #23133b;
   margin: 20px auto;
   padding: 20px;
-  font-family: "Rubik Wet Paint", cursive; }
+  font-family: "Rubik Wet Paint", cursive;
+  color: darkorange; }
 
 .title {
-  color: darkorange;
+  margin: 0;
   font-size: 90px;
-  font-weight: 400;
-  opacity: 1; }
+  font-weight: 400; }
+  .title_halloween {
+    margin-top: 40px; }
+
+.blink_title {
+  animation: blinkTitle 1s infinite alternate; }
+
+@keyframes blinkTitle {
+  0%,
+  19%,
+  21%,
+  31%,
+  32%,
+  41%,
+  42%,
+  100% {
+    color: #faed78; }
+  20%,
+  30%,
+  40% {
+    color: #bb2e03; } }
+
+.subtitle {
+  margin-bottom: 60px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: -5px; }
+
+span {
+  color: #bb2e03; }
 
 main {
   position: relative;
-  margin-left: 70px;
+  margin-left: 95px;
   margin-bottom: 30px; }
 
 .bat {

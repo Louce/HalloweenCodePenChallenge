@@ -1,11 +1,11 @@
 const clouds = document.querySelectorAll('.cloud');
 const moon = document.querySelector('.moon_white');
+const halloween = document.querySelector('.title_halloween')
 const cat = document.querySelector('#cat');
 const bodyWidth = document.body.clientWidth;
 
 
 //Make it rain
-//
 function randomRange(minNum, maxNum) {
     return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 }
@@ -19,6 +19,7 @@ function createRainDrop() {
 function startRain(cloud) {
     cloud.addEventListener('click', () => {
         moon.classList.add('blink');
+        halloween.classList.add('blink_title');
         const drops = 200;
         for (let i = 1; i <= drops; i++) {
             const drop = createRainDrop();
@@ -36,6 +37,21 @@ function startRain(cloud) {
 
 clouds.forEach(startRain);
 
+function stopRain() {
+    stopBlink();
+    const drops = document.querySelectorAll('.drop');
+    drops.forEach((drop) => {
+        drop.remove();
+    });
+}
+
+function stopBlink() {
+    moon.classList.remove('blink');
+    halloween.classList.remove('blink_title');
+}
+
+
+//kill bats
 const bats = document.querySelectorAll('.bat');
 
 function toggleTransformation(bat) {
@@ -67,13 +83,8 @@ bats.forEach((bat) => {
     });
 });
 
-function stopRain() {
-    const drops = document.querySelectorAll('.drop');
-    drops.forEach((drop) => {
-        drop.remove();
-    });
-}
 
+//pet the cat
 function rotateEyes() {
     const catLeftEye = document.querySelector('.cat_head--eye-left');
     const catRightEye = document.querySelector('.cat_head--eye-right');
@@ -81,6 +92,7 @@ function rotateEyes() {
     catRightEye.classList.toggle('cat_head--eye-right_rotate');
 }
 
+//resets
 function resetAll() {
     resetBats();
     rotateEyes();
