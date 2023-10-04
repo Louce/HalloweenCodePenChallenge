@@ -271,3 +271,28 @@ main {
   height: 30px;
   background-color: black;
   border-radius: 27%; }
+
+.cat_tail--detail {
+  position: absolute;
+  background-color: black; }
+  .cat_tail--detail-bottom {
+    bottom: 13%;
+    right: 70%;
+    width: 100px;
+    height: 20px;
+    border-radius: 40%;
+    transform: rotate(45deg); }
+  .cat_tail--detail-center {
+    bottom: 24%;
+    right: 85.5%;
+    width: 30px;
+    height: 15px;
+    border-radius: 50%;
+    transform: rotate(125deg); }
+  .cat_tail--detail-top {
+    bottom: 29%;
+    right: 85.7%;
+    width: 30px;
+    height: 10px;
+    border-radius: 50%;
+    transform: rotate(45deg); }
