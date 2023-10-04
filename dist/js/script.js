@@ -4,33 +4,38 @@ const cat = document.querySelector('#cat');
 const bodyWidth = document.body.clientWidth;
 
 
+//Make it rain
+//
 function randomRange(minNum, maxNum) {
     return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 }
 
-function rain(cloud) {
+function createRainDrop() {
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+    return drop;
+}
+
+function startRain(cloud) {
     cloud.addEventListener('click', () => {
-        moon.className = 'moon moon_white blink';
+        moon.classList.add('blink');
         const drops = 200;
         for (let i = 1; i <= drops; i++) {
-            let dropWidth = randomRange(0, bodyWidth);
-            let dropheight = randomRange(-800, 1200);
+            const drop = createRainDrop();
+            const dropWidth = randomRange(0, bodyWidth);
+            const dropHeight = randomRange(-800, 1200);
 
-            const newDrop = document.createElement('div');
-            newDrop.className = 'drop';
-            newDrop.id = 'drop' + i;
-            newDrop.style.left = dropWidth + 'px';
-            newDrop.style.top = dropheight + 'px';
+            drop.id = 'drop' + i;
+            drop.style.left = dropWidth + 'px';
+            drop.style.top = dropHeight + 'px';
 
-            document.body.appendChild(newDrop);
+            document.body.appendChild(drop);
         }
     });
 }
 
-clouds.forEach(rain);
+clouds.forEach(startRain);
 
-
-//transform bats to vampire and reverse
 const bats = document.querySelectorAll('.bat');
 
 function toggleTransformation(bat) {
@@ -48,19 +53,25 @@ function toggleTransformation(bat) {
     }
 }
 
+function resetBats() {
+    bats.forEach((bat) => {
+        if (bat.classList.contains('vampire')) {
+            toggleTransformation(bat);
+        }
+    });
+}
+
 bats.forEach((bat) => {
     bat.addEventListener('click', () => {
         toggleTransformation(bat);
     });
 });
 
-//reset
 function stopRain() {
-    let drops = document.querySelectorAll('.drop');
+    const drops = document.querySelectorAll('.drop');
     drops.forEach((drop) => {
         drop.remove();
     });
-    moon.classList.remove('blink');
 }
 
 function rotateEyes() {
@@ -70,27 +81,18 @@ function rotateEyes() {
     catRightEye.classList.toggle('cat_head--eye-right_rotate');
 }
 
-function resetBats() {
-    bats.forEach((bat) => {
-        if (bat.classList.contains('vampire')) {
-            toggleTransformation(bat);
-        }
-    });
-}
-
-rotateEyes();
-
-document.addEventListener('keydown', (event) => {
-    if (event.keyCode === 32) {
-        resetBats();
-        rotateEyes();
-        stopRain();
-    }
-});
-
-//cat reset
-cat.addEventListener('click', () => {
+function resetAll() {
     resetBats();
     rotateEyes();
     stopRain();
-})
+}
+
+document.addEventListener('keydown', (event) => {
+    if (event.keyCode === 32) {
+        resetAll();
+    }
+});
+
+cat.addEventListener('click', () => {
+    resetAll();
+});
