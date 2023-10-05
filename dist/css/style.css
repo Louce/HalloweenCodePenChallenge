@@ -9,13 +9,20 @@ body {
   padding: 20px;
   font-family: "Rubik Wet Paint", cursive;
   color: darkorange; }
+  @media screen and (max-width: 440px) {
+    body {
+      height: 80vh; } }
 
 .title {
   margin: 0;
   font-size: 90px;
   font-weight: 400; }
+  @media screen and (max-width: 440px) {
+    .title {
+      margin: 0 auto;
+      font-size: 44px; } }
   .title_halloween {
-    margin-top: 40px; }
+    margin-top: 80px; }
 
 .blink_title {
   animation: blinkTitle 1s infinite alternate; }
@@ -36,18 +43,22 @@ body {
     color: #bb2e03; } }
 
 .subtitle {
-  margin-bottom: 60px;
-  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 100px;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: 40px;
   margin-top: -5px; }
+  @media screen and (max-width: 440px) {
+    .subtitle {
+      margin-bottom: 60px;
+      font-size: 27px; } }
 
 span {
   color: #bb2e03; }
 
 main {
   position: relative;
-  margin-left: 95px;
+  margin-left: 65px;
   margin-bottom: 30px; }
 
 .bat {
@@ -55,6 +66,9 @@ main {
   position: absolute;
   font-size: 50px;
   transition: transform 0.2s ease-in-out; }
+  @media screen and (max-width: 440px) {
+    .bat {
+      font-size: 20px; } }
   .bat:hover {
     cursor: pointer; }
   .bat:nth-child(1) {
@@ -68,6 +82,9 @@ main {
     top: 35%;
     right: -34%;
     transform: rotate(90deg); }
+    @media screen and (max-width: 440px) {
+      .bat:nth-child(3) {
+        right: -12%; } }
   .bat:nth-child(4) {
     top: 40%;
     left: -7%;
@@ -98,9 +115,15 @@ main {
   .cloud_left {
     top: 6%;
     left: -50%; }
+    @media screen and (max-width: 440px) {
+      .cloud_left {
+        right: 55%; } }
   .cloud_top {
     top: 42%;
     left: 88%; }
+    @media screen and (max-width: 440px) {
+      .cloud_top {
+        left: 72%; } }
   .cloud_bottom {
     bottom: -4%;
     left: -7%; }
@@ -110,36 +133,73 @@ main {
     position: relative;
     background-color: transparent;
     border-radius: 50%; }
+    @media screen and (max-width: 440px) {
+      .cloud_elements {
+        width: 100px;
+        height: 50px; } }
     .cloud_elements--detail {
       width: 80px;
       background-color: darkgray;
       border-radius: 50%;
       position: absolute; }
+      @media screen and (max-width: 440px) {
+        .cloud_elements--detail {
+          width: 40px; } }
       .cloud_elements--detail:nth-child(1) {
         height: 60px;
         width: 100px;
         top: 20px;
         left: 0; }
+        @media screen and (max-width: 440px) {
+          .cloud_elements--detail:nth-child(1) {
+            height: 30px;
+            width: 50px;
+            top: 10px; } }
       .cloud_elements--detail:nth-child(2) {
         height: 70px;
         top: 5px;
         left: 60px; }
+        @media screen and (max-width: 440px) {
+          .cloud_elements--detail:nth-child(2) {
+            height: 35px;
+            top: 2px;
+            left: 30px; } }
       .cloud_elements--detail:nth-child(3) {
         height: 60px;
         top: 20px;
         left: 100px; }
+        @media screen {
+          .cloud_elements--detail:nth-child(3) {
+            height: 30px;
+            top: 10px;
+            left: 50px; } }
       .cloud_elements--detail:nth-child(4) {
         height: 60px;
         top: 40px;
         left: 30px; }
+        @media screen and (max-width: 440px) {
+          .cloud_elements--detail:nth-child(4) {
+            height: 30px;
+            top: 20px;
+            left: 15px; } }
       .cloud_elements--detail:nth-child(5) {
         height: 60px;
         top: 40px;
         left: 70px; }
+        @media screen and (max-width: 440px) {
+          .cloud_elements--detail:nth-child(5) {
+            height: 30px;
+            top: 20px;
+            left: 35px; } }
       .cloud_elements--detail:nth-child(6) {
         height: 60px;
         top: 30px;
         left: 120px; }
+        @media screen and (max-width: 440px) {
+          .cloud_elements--detail:nth-child(6) {
+            height: 30px;
+            top: 15px;
+            left: 60px; } }
 
 .drop {
   position: absolute;
@@ -168,6 +228,10 @@ main {
   width: 400px;
   height: 400px;
   border-radius: 50%; }
+  @media screen and (max-width: 440px) {
+    .moon {
+      width: 200px;
+      height: 200px; } }
   .moon_white {
     position: relative;
     overflow: hidden;
@@ -218,6 +282,10 @@ main {
   background-color: black;
   border-radius: 50%;
   transform: rotate(180deg); }
+  @media screen and (max-width: 440px) {
+    .cat_head {
+      width: 35px;
+      height: 30px; } }
   .cat_head--ear {
     z-index: 3;
     position: absolute;
@@ -225,6 +293,10 @@ main {
     width: 30px;
     height: 30px;
     background-color: black; }
+    @media screen and (max-width: 440px) {
+      .cat_head--ear {
+        width: 15px;
+        height: 15px; } }
     .cat_head--ear-left {
       left: 53%;
       transform: rotate(11deg); }
@@ -241,6 +313,11 @@ main {
     border: 4px solid darkorange;
     background-color: black;
     transition: transform 0.5s ease-in-out; }
+    @media screen and (max-width: 440px) {
+      .cat_head--eye {
+        width: 3.5px;
+        height: 1px;
+        border-width: 2px; } }
     .cat_head--eye-left {
       left: 53%;
       transform: rotate(33deg); }
@@ -258,6 +335,10 @@ main {
     height: 2px;
     border-radius: 50%;
     background-color: black; }
+    @media screen and (max-width: 440px) {
+      .cat_head--mustache {
+        width: 20px;
+        height: 1px; } }
     .cat_head--mustache-1 {
       top: 55%;
       left: 78%;
@@ -292,6 +373,10 @@ main {
   background-color: black;
   border-radius: 50%;
   transform: rotate(90deg); }
+  @media screen and (max-width: 440px) {
+    .cat_body {
+      width: 85px;
+      height: 40px; } }
 
 .cat_feet {
   position: absolute;
@@ -301,6 +386,10 @@ main {
   height: 30px;
   background-color: black;
   border-radius: 27%; }
+  @media screen and (max-width: 440px) {
+    .cat_feet {
+      width: 50px;
+      height: 15px; } }
 
 .cat_tail--detail {
   position: absolute;
@@ -312,6 +401,10 @@ main {
     height: 20px;
     border-radius: 40%;
     transform: rotate(45deg); }
+    @media screen and (max-width: 440px) {
+      .cat_tail--detail-bottom {
+        width: 50px;
+        height: 10px; } }
   .cat_tail--detail-center {
     bottom: 24%;
     right: 85.5%;
@@ -319,6 +412,10 @@ main {
     height: 15px;
     border-radius: 50%;
     transform: rotate(125deg); }
+    @media screen and (max-width: 440px) {
+      .cat_tail--detail-center {
+        width: 15px;
+        height: 7.5px; } }
   .cat_tail--detail-top {
     bottom: 29%;
     right: 85.7%;
@@ -326,3 +423,7 @@ main {
     height: 10px;
     border-radius: 50%;
     transform: rotate(45deg); }
+    @media screen and (max-width: 440px) {
+      .cat_tail--detail-top {
+        width: 15px;
+        height: 5px; } }

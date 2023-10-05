@@ -74,6 +74,9 @@ function resetBats() {
         if (bat.classList.contains('vampire')) {
             toggleTransformation(bat);
         }
+        if (bat.classList.contains('bat_1') || bat.classList.contains('bat_3') || bat.classList.contains('bat_4')) {
+            bat.style.transform = 'rotate(90deg)';
+        }
     });
 }
 
